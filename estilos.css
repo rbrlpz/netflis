@@ -1,0 +1,38 @@
+body{
+    background: #646473;
+}
+
+header{
+    display: block;
+    background: rgba(255,255,255,0.3);
+}
+
+header #menu, header #logo, header #extras{
+    display: inline-block;
+}
+
+section.movies{
+    height: 630px;
+}
+.movies .estrenos{
+    height: 130px;
+}
+.portadas{
+    background: #000;
+}
+article.pelicula{
+    display: inline-block;
+    margin: 0.2em;
+}
+.pelicula figure img{
+    width: 320px;
+    height: 486px;
+}
+.pelicula .titulos{
+    display: block;
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    color:#fff;
+    z-index: 100;
+    width: 320px;
+}
