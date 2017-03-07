@@ -1,38 +1,128 @@
-body{
+body {
     background: #646473;
 }
 
-header{
+header {
     display: block;
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
 }
 
-header #menu, header #logo, header #extras{
+header #menu,
+header #logo,
+header #extras {
     display: inline-block;
 }
 
-section.movies{
-    height: 630px;
+header #menu {
+    width: 20%;
 }
-.movies .estrenos{
+
+section.movies {
+    height: 365px;
+}
+
+.movies .estrenos {
     height: 130px;
 }
-.portadas{
+
+.portadas {
     background: #000;
 }
-article.pelicula{
+
+.pelicula {
     display: inline-block;
     margin: 0.2em;
+    position: relative;
 }
-.pelicula figure img{
-    width: 320px;
-    height: 486px;
+
+.pelicula figure img {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: width 2s, height 2s;
+    /* Safari */
+    transition: width 2s, height 2s;
+    z-index: 10;
 }
-.pelicula .titulos{
+
+.pelicula figure img:hover {
+    width: 120%;
+    height: 120%;
+    z-index: 1000;
+}
+
+.pelicula .titulos {
+    background: rgba(50, 50, 50, 0.7);
+    bottom: 0;
+    left: 0;
+    color: #fff;
     display: block;
-    background: rgba(0,0,0,0.7);
+    height: 50px;
+    line-height: 50px;
     position: absolute;
-    color:#fff;
+    width: 100%;
     z-index: 100;
-    width: 320px;
+
+}
+
+.carousel-control {
+    width: 4%;
+    position: absolute;
+    background: rgba(0,0,0,0.8)
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    margin-left: 15px;
+    background-image: none;
+}
+
+@media (max-width: 767px) {
+    .carousel-inner .active.left {
+        left: -100%;
+    }
+    .carousel-inner .next {
+        left: 100%;
+    }
+    .carousel-inner .prev {
+        left: -100%;
+    }
+    .active > div {
+        display: none;
+    }
+    .active > div:first-child {
+        display: block;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 992px) {
+    .carousel-inner .active.left {
+        left: -50%;
+    }
+    .carousel-inner .next {
+        left: 50%;
+    }
+    .carousel-inner .prev {
+        left: -50%;
+    }
+    .active > div {
+        display: none;
+    }
+    .active > div:first-child {
+        display: block;
+    }
+    .active > div:first-child + div {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    .carousel-inner .active.left {
+        left: -16.7%;
+    }
+    .carousel-inner .next {
+        left: 16.7%;
+    }
+    .carousel-inner .prev {
+        left: -16.7%;
+    }
 }
