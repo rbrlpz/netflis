@@ -1,0 +1,14 @@
+<header id="header" class="">
+        <div id="menu"></div>
+        <div id="logo">
+            <img src="imgs/logo.png" alt="netflis logo">
+        </div>
+        <div id="extras">
+            <p>Buscar</p>
+            <p>Usuariox</p>
+        </div>
+    </header>
+    <carrusel  
+        *ngFor="let seccion of secciones"
+        [categoria]="seccion"
+    ></carrusel>

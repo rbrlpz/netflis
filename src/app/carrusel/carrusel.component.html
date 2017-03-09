@@ -1,0 +1,11 @@
+<section class="movies">
+        <div class="seccion">{{categoria.nombre}}</div>
+        <div class="carousel slide" data-ride="carousel" data-type="multi" id="carrusel">
+            <div class="carousel-inner">
+                <pelicula 
+                    *ngFor="let p of categoria.peliculas"
+                    [peli]="p"
+                    ></pelicula>
+            </div>
+        </div>
+    </section>

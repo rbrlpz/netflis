@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Title Page</title>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <link rel="stylesheet" type="text/css" href="estilos.css">
-    </head>
-    <body>
-        <header id="header" class="">
-                <div id="menu"></div>
-                <div id="logo">
-                    <img src="imgs/logo.png" alt="netflis logo">
-                </div>
-                <div id="extras">
-                    <p>Buscar</p>
-                    <p>Usuariox</p>
-                </div>
-        </header>
-        <section class="movies">
-            <div class="seccion">Estrenos</div>
-            <div class="portadas">
-                <article class="pelicula">
-                    <figure>
-                        <img src="imgs/movie1.jpg" alt="movie1 titulo">
-                    </figure>
-                    <div class="titulos">
-                        <p class="titulo">Titulo pelicula</p>
-                    </div>
-                </article>
-                
-            </div>
-        </section>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
 
-        <!-- jQuery -->
-        <script src="//code.jquery.com/jquery.js"></script>
-        <!-- Bootstrap JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    </body>
+<body>
+    <app-root></app-root>
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script>
+    $(".carousel[data-type='multi'] .item").each(function() {
+        var sig = $(this).next();
+        if (!sig.length) {
+            sig = $(this).siblings(":first");
+        }
+        sig.children(":first-child").clone().appendTo($(this));
+        for (var i = 0; i < 4; i++) {
+            sig = sig.next();
+            if (!sig.length) {
+                sig = $(this).siblings(":first");
+            }
+            sig.children(":first-child").clone().appendTo($(this));
+        }
+    });
+    </script>
+</body>
+
 </html>
